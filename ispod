@@ -1,0 +1,34 @@
+Installing software packageson:-
+docker pull ubuntu
+docker run -it ubuntu
+apt-get -y install firefox
+apt-get -y install software-properties-commonadd-apt- repository
+ppa:deadsnakes/ppa
+apt-get -y install python3.7 apt-get -y update
+apt-get -y install vim
+after successfully installation we can use exit command to exit from that container
+Working with Docker Volumes and Networks
+• Volumes are the preferred mechanism for persisting data generatedby and used by
+Dockercontainers.
+• By default it stored it within Containers. And when you delete container, the data
+isalso lost.
+• Volumes are easier to back up or migrate than bind mounts.
+• You can manage volumes using Docker CLI commands or the Docker API.
+• Volumes work on both Linux and Windows containers.
+• Volumes can be more safely shared among multiple containers. Following are
+some
+command for volume:
+docker volume –help
+docker volume create &lt;volumename&gt; :
+Tocreate volumedocker volume ls : To list volume
+docker volume rm &lt;volumename&gt; : to delete
+volumedocker volume prune : todelete all unused volumes
+
+We can run a container on a network by assigning specific volume like :-
+docker run –name myjenkins1 –v myvol:/var/Jenkins_home -p 8080:8080 –p
+50000:50000 Jenkins:2.60.3
+You will get a admin password as following
+Now goto localhost:8080 and use that password to login and press continue
+Now customize your container image by choosing any one option
+Now create first admin user
+After that finish setup and start using your container
